@@ -1,0 +1,76 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de la carte de passer à la ligne suivante */
+  justify-content: space-around; /* Espacement uniforme des cartes */
+  align-items: flex-start; /* Alignement des éléments au début du conteneur flex */
+}
+
+.card {
+  width: calc(50% - 40px); /* Ajustement de la largeur, en soustrayant les marges */
+  height: 300px; /* Hauteur fixe */
+  margin: 20px; /* Cette marge est soustraite dans le calcul de la largeur */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column; /* Empilement vertical des enfants de la carte */
+  justify-content: space-between; /* Répartition de l'espace autour des éléments */
+  overflow: hidden; /* Assure que le contenu ne déborde pas de la boîte de la carte */
+}
+
+/* Alignement alterné des cartes */
+.card:nth-child(odd) {
+  margin-right: auto;
+}
+
+.card:nth-child(even) {
+  margin-left: auto;
+}
+
+.card img {
+  width: 60%; /* Largeur de l'image à 60% de son conteneur */
+  height: auto; /* Hauteur automatique pour maintenir le rapport d'aspect */
+  display: block; /* Affichage en bloc pour permettre l'application de la marge auto */
+  margin: 0 auto 10px; /* Centrage horizontal de l'image et réduction de la marge inférieure */
+  object-fit: cover; /* Assure que l'image couvre la zone, peut couper l'image */
+  transition: transform 0.3s ease; /* Transition d'animation */
+}
+
+.card img:hover {
+  transform: scale(1.05); /* Agrandissement léger de l'image au survol */
+}
+
+/* Style spécifique pour l'image de la chemise à carreaux */
+.card .plaid-shirt {
+  width: 50%; /* Réduction de la largeur à 50% */
+  margin-bottom: 10px; /* Réduction de la marge inférieure pour rapprocher le bouton */
+}
+
+.card h3 {
+  /* Ajustements des styles pour les titres */
+  margin-bottom: 10px; /* Vous pouvez également ajuster la marge inférieure ici selon les besoins */
+}
+
+.card .btn-blue {
+  /* Ajustements des styles pour le bouton */
+  margin-top: auto; /* Assure que le bouton est poussé vers le bas */
+}
+
+.card:nth-child(2) .btn-blue { /* en supposant que le bouton est dans la deuxième carte */
+  margin-top: -30px; /* Remonte le bouton de 30px */
+}
+
+.card:nth-child(2) h3 { /* en supposant que le titre est dans la deuxième carte */
+  transform: translateY(-30px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.card h3 {
+  text-align: center; /* Centre le titre dans la carte */
+  /* Autres styles */
+}
+
+.card a {
+  display: block; /* Fait du lien un bloc pour permettre le centrage du texte */
+  text-align: center; /* Centre le texte du bouton */
+  /* Autres styles */
+}
